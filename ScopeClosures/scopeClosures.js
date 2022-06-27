@@ -5,7 +5,8 @@ where in memory is it? and what bucket of organizitaion does it fit into?
 And the rules for that is called SCOPE
 */
 
-console.log(y); /*Same thing with console.log(y);
+//console.log(y); 
+/*Same thing with console.log(y);
 Not only do i need to look up console and log, but i also need to look up y
 I need to figure out that variable. Where does it come from? Does it come from this scope?
 Does it come from a different bucket of scope?
@@ -36,8 +37,29 @@ var keyHandler = function keyHandler(){
 //IIFE Immediately Invoked Function Expression
 var teacher2 = "Kyle";
 
-(function anotherTeacher(){
+(function anotherTeacher(){ //the wrapping paranthesis makes it a function expression instead of function declaration
     var teacher2 = "Suzy";
-    console.log(teacher2); // 
-}) ();
+    console.log(teacher2); 
+}) (); // () makes it immediately called.
 console.log(teacher2);
+
+
+//BLOCK SCOPING
+var teacher3 = "Kyle";
+{
+    let teacher3 = "Suzy";//let keyword creates teacher3 inside the curly brace block
+    console.log(teacher3); //Suzy
+}
+console.log(teacher3);//Kyle
+
+function myfunc(){
+    var func = 1;
+    console.log("haha");
+}
+
+//CLOSURE
+/*Closure is when a function "remembers" the variables outside of it,
+even if you pass that function elsewhere.
+
+A function remembers the variables outside of it.Variables that were declared in some outer scope.
+*/
